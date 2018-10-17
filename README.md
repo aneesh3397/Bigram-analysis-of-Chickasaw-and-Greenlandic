@@ -1,6 +1,6 @@
 # Bigram-analysis-of-Chickasaw-and-Greenlandic
 
-This project explores what surface level phenomenon can be discovered by training a bigram model on a short text of either Chickasaw or Greenlandic. 
+This project explores what surface level phenomenon can be discovered by training a bigram model on a short text of either Chickasaw or Greenlandic. It then uses this information to identify a given text as being in Chickasaw or Greenlandic. 
 
 
 The models captured some obvious surface level characteristics of both languages. For 
@@ -46,13 +46,13 @@ obvious way would be to look for 'b's; if we find any we know the text is in Chi
 However this is risky because we might have Chickasaw text that happens to not use any
 'b's. A better way might be to make use of the polysynthetic nature of Greenlandic, 
 which leads to less spaces. Any text that needs to be identified will have spaces. 
-The relative frequency of ' ' was found to be 0.0640 for Greenlandic and 0.1466 for 
+The relative frequency of ' ' was found to be 0.0678 for Greenlandic and 0.09522 for 
 Chickasaw. If we simply calculate the relative frequency of ' ' in a given text and it
-happens to be > 0.1, we can assume that the text is in Chickasaw. This method works 
-remarkably well; the functions below generate a random string of text from either 
+happens to be > 0.8, we can assume that the text is in Chickasaw. This simple fact works 
+remarkably well; the function gen_random generates a random string of text from either 
 the Greenlandic or Chickasaw texts, and feed it to a function that identifies the 
 text using the relative frequency of ' '. A third function runs this 10000 times
-and on average the function correctly identifies the text 98% of the time. 
+and on average the function correctly identifies the text correctly upwards of 90% of the time. 
 
 The lidstone smoothing with a parameter of 0.0001 performed the 
 best. In general, the smaller the smoothing parameter, the better the performance. This makes 
